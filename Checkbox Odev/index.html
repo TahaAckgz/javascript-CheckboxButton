@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox Odevi</title>
+  </head>
+  <body>
+    <h2>Hobilerinizi Seçiniz</h2>
+    <div class="container"></div>
+    <!-- kullanıcılardan toplanan bilgileri server'a göndermektir. -->
+    <!-- internetten baktım -->
+        <!-- İslemedigimiz icin div'e dönüştürdüm -->
+    <!-- 
+      <form id="checkboxForm">
+        <label> <input type="checkbox" name="Seyehat" /> Seyehat </label><br />
+        <label> <input type="checkbox" name="Yemek" /> Yemek </label><br />
+        <label> <input type="checkbox" name="Spor" /> Spor </label><br />
+        <label> <input type="checkbox" name="Sinema" /> Sinema </label><br />
+        <label> <input type="checkbox" name="Fitness" /> Fitness </label><br />
+
+        <button type="button" onclick="kaydet()">Kaydet</button>
+      </form> -->
+      
+      <div id="checkboxForm">
+        <label> <input type="checkbox" name="Seyehat" /> Seyehat </label><br />
+        <label> <input type="checkbox" name="Yemek" /> Yemek </label><br />
+        <label> <input type="checkbox" name="Spor" /> Spor </label><br />
+        <label> <input type="checkbox" name="Sinema" /> Sinema </label><br />
+        <label> <input type="checkbox" name="Fitness" /> Fitness </label><br />
+
+        <button type="button" onclick="kaydet()">Kaydet</button>
+      </div>
+
+      <div id="sonuc"></div>
+
+      <script>
+        function kaydet() {
+          // Form elemanını seçer
+          var hobi = document.getElementById("checkboxForm");
+
+          // Formdaki tüm checkboxları seçer querySelectorAll html elemanlarının hepsini seçmeye yarar
+          var checkboxlar = hobi.querySelectorAll('input[type="checkbox"]');
+
+          // Seçilen checkboxların değerlerini saklamak için bir dizi oluştur
+          var secilenHobiler = [];
+
+          // Seçilen checkboxların değerlerini kontrol eder
+          // internetten baktım
+          checkboxlar.forEach(function (checkbox) {
+            if (checkbox.checked) {
+              secilenHobiler.push(checkbox.name);
+            }
+          });
+
+          // Sonuçları ekrana yazdırır
+          var sonucHobi = document.getElementById("sonuc");
+          sonucHobi.innerHTML = "Seçilen hobiler: " + secilenHobiler.join(", ");
+        }
+      </script>
+    </div>
+  </body>
+</html>
